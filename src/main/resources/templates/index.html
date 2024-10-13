@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event-Driven Blog</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+</head>
+<body>
+    <h1>Event-Driven Blog</h1>
+    
+    <p>Type a message and click the button:</p>
+    
+    <input type="text" id="messageInput" placeholder="Enter message"/>
+    <button onclick="sendMessage()">Send Message</button>
+    
+    <h2>Received Messages</h2>
+    <div id="messages"></div>
+
+    <script type="text/javascript">
+        var stompClient = null;
+
+        function connect() {
+            var socket = new SockJS('/ws');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function (frame) {
+                stompClient.subscribe('/topic/events', function (event) {
+                    showMessage(JSON.parse(event.body).message);
+                });
+            });
+        }
+
+        function sendMessage() {
+            var message = document.getElementById('messageInput').value;
+            fetch('/send-message', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            });
+        }
+
+        function showMessage(message) {
+            var messageDiv = document.getElementById('messages');
+            var newMessage = document.createElement('div');
+            newMessage.textContent = message;
+            messageDiv.appendChild(newMessage);
+        }
+
+        connect(); // Connect to WebSocket when the page loads
+    </script>
+</body>
+</html>
+
