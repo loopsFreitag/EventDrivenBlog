@@ -1,10 +1,10 @@
-package com.gfreitas.blog.EventDrivenBlog;
+package com.gfreitas.eventDrivenBlog;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EventDrivenBlogApplicationTests {
+class EventDrivenBlogV2ApplicationTests {
 
 	@Test
 	void contextLoads() {

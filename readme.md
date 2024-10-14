@@ -12,4 +12,3 @@ This is a simple blog application built using **Spring Boot** with an **event-dr
 - **Thymeleaf** for HTML templates
 - **Spring WebSockets** for real-time communication
 - **Java 17**
-
