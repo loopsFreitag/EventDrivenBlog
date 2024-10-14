@@ -1,12 +1,12 @@
-package com.gfreitas.blog.EventDrivenBlog.Controller;
+package com.gfreitas.eventDrivenBlog.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.gfreitas.blog.EventDrivenBlog.Event.*;
-import com.gfreitas.blog.EventDrivenBlog.Model.*;
+import com.gfreitas.eventDrivenBlog.Event.*;
+import com.gfreitas.eventDrivenBlog.Model.*;
 
 @RestController
 public class MessageController {

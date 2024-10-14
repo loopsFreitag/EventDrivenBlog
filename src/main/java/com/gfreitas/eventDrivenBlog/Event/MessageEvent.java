@@ -1,4 +1,4 @@
-package com.gfreitas.blog.EventDrivenBlog.Event;
+package com.gfreitas.eventDrivenBlog.Event;
 
 public class MessageEvent {
     private String message;

@@ -1,4 +1,4 @@
-package com.gfreitas.blog.EventDrivenBlog.Model;
+package com.gfreitas.eventDrivenBlog.Model;
 
 public class MessageRequest {
     private String message;

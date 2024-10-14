@@ -1,4 +1,4 @@
-package com.gfreitas.blog.EventDrivenBlog;
+package com.gfreitas.eventDrivenBlog.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

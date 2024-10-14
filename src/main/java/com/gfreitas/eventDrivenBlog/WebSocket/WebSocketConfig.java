@@ -1,4 +1,4 @@
-package com.gfreitas.blog.EventDrivenBlog.WebSocket;
+package com.gfreitas.eventDrivenBlog.WebSocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
